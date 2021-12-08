@@ -1,4 +1,4 @@
-# ReducedHttpClientFactoryLogging
+# MinimalHttpLogger
 
 [![Build](https://github.com/johnkors/ReducedHttpClientFactoryLogging/workflows/CI/badge.svg)](https://github.com/johnkors/ReducedHttpClientFactoryLogging/actions)
  [![NuGet](https://img.shields.io/nuget/v/ReducedHttpClientFactoryLogging.svg)](https://www.nuget.org/packages/ReducedHttpClientFactoryLogging/)
@@ -7,7 +7,7 @@
 
 ## What is this?
 
-Configures the HttpClient factory logging with a logger than reduces the number of log statements on http client requests from 4 to 1.
+Configures the HttpClient factory logging with a logger than reduces the number of log statements on httpclient requests from 4 to 1.
 
 ```log
 info: System.Net.Http.HttpClient.Default.LogicalHandler[100] Start processing HTTP request GET https://www.google.com/
@@ -30,6 +30,5 @@ info: System.Net.Http.HttpClient.Default.ClientHandler[101] GET https://www.goog
 ## Usage
 
 ```csharp
-services.AddHttpClient();
 services.UseMinimalHttpLogger();
 ```
