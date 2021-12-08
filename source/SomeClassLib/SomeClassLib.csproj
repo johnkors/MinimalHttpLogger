@@ -1,0 +1,53 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net5.0;net6.0</TargetFrameworks>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <Authors>John Korsnes</Authors>
+    <Description>This is a sample classlib published via the template repo</Description>
+    <PackageIcon>icon.512x512.png</PackageIcon>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageTags>library</PackageTags>
+    <PackageProjectUrl>https://github.com/johnkors/dotnet-library</PackageProjectUrl>
+    <License>https://github.com/johnkors/dotnet-library/blob/main/LICENSE</License>
+    <RepositoryUrl>https://github.com/johnkors/dotnet-library</RepositoryUrl>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <DotNet6Version>6.0.0</DotNet6Version>
+    <DotNet5Version>5.0.0</DotNet5Version>
+  </PropertyGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'net6.0'">
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="$(DotNet6Version)" />
+    <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="$(DotNet6Version)" />
+    <PackageReference Include="Microsoft.Extensions.Options" Version="$(DotNet6Version)" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'net5.0'">
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="$(DotNet5Version)" />
+    <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="$(DotNet5Version)" />
+    <PackageReference Include="Microsoft.Extensions.Options" Version="$(DotNet5Version)" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="../../images/icon.512x512.png" Pack="true" PackagePath="" />
+    <None Include="../../README.md" Pack="true" PackagePath="" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SomePeerDependency\SomePeerDependency.csproj" PrivateAssets="All" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <TargetsForTfmSpecificBuildOutput>$(TargetsForTfmSpecificBuildOutput);IncludeP2PAssets</TargetsForTfmSpecificBuildOutput>
+  </PropertyGroup>
+  <Target Name="IncludeP2PAssets">
+    <ItemGroup>
+        <BuildOutputInPackage Include="$(OutputPath)SomePeerDependency.dll" />
+    </ItemGroup>
+</Target>
+
+</Project>
