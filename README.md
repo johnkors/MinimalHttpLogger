@@ -5,6 +5,11 @@
 [![NuGet](https://img.shields.io/nuget/dt/MinimalHttpLogger.svg)](https://www.nuget.org/packages/MinimalHttpLogger/)
 
 
+## Why?
+My logs were 
+* hard to read 
+* filling up space(*) 
+
 ## What is this?
 
 It's not possible to configure the log pattern of the built-in HttpClient loggers. To modify, one has to replace them. This package replaces the default loggers with a logger that:
@@ -31,10 +36,16 @@ info: GET https://www.google.com/ - 200 OK in 186.4883ms
 
 ## Install
 
-`$ dotnet add package `
+```sh
+$ dotnet add package
+```
 
 ## Usage
 
 ```csharp
 services.UseMinimalHttpLogger();
 ```
+
+---
+
+(*) I'm cheap. My Papertrail account stops logging when reaching a certain szie, so reducing the log helps
