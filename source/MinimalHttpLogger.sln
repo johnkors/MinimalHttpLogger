@@ -4,6 +4,12 @@ VisualStudioVersion = 16.0.30114.105
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MinimalHttpLogger", "MinimalHttpLogger\MinimalHttpLogger.csproj", "{E814C871-3DE3-401C-8181-0655FB933938}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples", "Samples", "{3E39FB77-56E9-4995-870B-EBD42BA5B423}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "With", "..\samples\With\With.csproj", "{63FCB06F-9061-4614-995E-8B2AF95AED2D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Without", "..\samples\Without\Without.csproj", "{7B334484-08B5-4C13-9021-FEB13E163749}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,5 +23,17 @@ Global
 		{E814C871-3DE3-401C-8181-0655FB933938}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E814C871-3DE3-401C-8181-0655FB933938}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E814C871-3DE3-401C-8181-0655FB933938}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63FCB06F-9061-4614-995E-8B2AF95AED2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63FCB06F-9061-4614-995E-8B2AF95AED2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63FCB06F-9061-4614-995E-8B2AF95AED2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63FCB06F-9061-4614-995E-8B2AF95AED2D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B334484-08B5-4C13-9021-FEB13E163749}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B334484-08B5-4C13-9021-FEB13E163749}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B334484-08B5-4C13-9021-FEB13E163749}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B334484-08B5-4C13-9021-FEB13E163749}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{63FCB06F-9061-4614-995E-8B2AF95AED2D} = {3E39FB77-56E9-4995-870B-EBD42BA5B423}
+		{7B334484-08B5-4C13-9021-FEB13E163749} = {3E39FB77-56E9-4995-870B-EBD42BA5B423}
 	EndGlobalSection
 EndGlobal

@@ -8,6 +8,7 @@ public class Worker : BackgroundService
     public Worker(HttpClient client, ILogger<Worker> logger)
     {
         _client = client;
+        _client.Timeout = TimeSpan.FromSeconds(10);
         _logger = logger;
     }
 
@@ -15,23 +16,16 @@ public class Worker : BackgroundService
     {
         while (!stoppingToken.IsCancellationRequested)
         {
-            await _client.GetAsync("https://www.google.com");
+            try
+            {
+                await _client.GetAsync("https://httpstat.us/200?sleep=3000", stoppingToken);
+            }
+            catch (TaskCanceledException)
+            {
+                _logger.LogInformation("Timeout!");
+            }
+
             await Task.Delay(10000, stoppingToken);
         }
-    }
-}
-
-public class WithoutClient
-{
-    private readonly HttpClient _client;
-
-    public WithoutClient(HttpClient client)
-    {
-        _client = client;
-    }
-
-    public Task Request()
-    {
-        return _client.GetAsync("http://www.google.com");
     }
 }

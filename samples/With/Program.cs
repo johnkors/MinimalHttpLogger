@@ -1,5 +1,4 @@
 using With;
-using Microsoft.Extensions.DependencyInjection;
 
 IHost host = Host.CreateDefaultBuilder(args)
     .ConfigureLogging((c, b) =>
@@ -8,6 +7,10 @@ IHost host = Host.CreateDefaultBuilder(args)
     })
     .ConfigureServices(services =>
     {
+        services.Configure<HostOptions>(hostOptions =>
+        {
+            hostOptions.BackgroundServiceExceptionBehavior = BackgroundServiceExceptionBehavior.Ignore;
+        });
         services.AddHttpClient();
         services.UseMinimalHttpLogger();
         services.AddHostedService<Worker>();
