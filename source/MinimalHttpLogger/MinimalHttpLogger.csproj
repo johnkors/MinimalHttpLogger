@@ -1,0 +1,34 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <Authors>John Korsnes</Authors>
+    <Description>Minimizes log output produced by HttpClient</Description>
+    <PackageIcon>icon.512x512.png</PackageIcon>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageTags>HttpClient Extensions Logging Minimal</PackageTags>
+    <PackageProjectUrl>https://github.com/johnkors/MinimalHttpLogging</PackageProjectUrl>
+    <License>https://github.com/johnkors/MinimalHttpLogging/blob/main/LICENSE</License>
+    <RepositoryUrl>https://github.com/johnkors/MinimalHttpLogging</RepositoryUrl>    
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <DotNet6Version>6.0.0</DotNet6Version>
+  </PropertyGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'net6.0'">
+    <PackageReference Include="Microsoft.Extensions.Http" Version="$(DotNet6Version)" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="$(DotNet6Version)" />
+    <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="$(DotNet6Version)" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="$(DotNet6Version)" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="../../images/icon.512x512.png" Pack="true" PackagePath="" />
+    <None Include="../../README.md" Pack="true" PackagePath="" />
+  </ItemGroup>
+
+</Project>
