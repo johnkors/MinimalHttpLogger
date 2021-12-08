@@ -7,19 +7,25 @@
 
 ## What is this?
 
-Configures the HttpClient factory logging with a logger than reduces the number of log statements on httpclient requests from 4 to 1.
+It's not possible to configure the log pattern of the built-in HttpClient loggers. To modify, one has to replace them. This package replaces the default loggers with a logger that:
 
+1. Reduces the number of log statements on httpclient requests from 4 to 1 
+2. Logs 1 aggregated log statement: `{Method} {Uri} - {StatusCode} {StatusCodeLiteral} in {Time}ms`
+
+
+### Change in output
+
+Before:
 ```log
-info: LogicalHandler[100] Start processing HTTP request GET https://www.google.com/
-info: ClientHandler[100] Sending HTTP request GET https://www.google.com/
-info: ClientHandler[101] Received HTTP response headers after 188.6041ms - 200
-info: LogicalHandler[101] End processing HTTP request after 188.8026ms - 200
+info: Start processing HTTP request GET https://www.google.com/
+info: Sending HTTP request GET https://www.google.com/
+info: Received HTTP response headers after 188.6041ms - 200
+info: End processing HTTP request after 188.8026ms - 200
 ```
 
-to
-
+After:
 ```log
-info: ClientHandler[101] GET https://www.google.com/ - OK in 186.4883ms
+info: GET https://www.google.com/ - 200 OK in 186.4883ms
 ```
 
 
