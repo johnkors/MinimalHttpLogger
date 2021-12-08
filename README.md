@@ -1,8 +1,8 @@
 # MinimalHttpLogger
 
-[![Build](https://github.com/johnkors/ReducedHttpClientFactoryLogging/workflows/CI/badge.svg)](https://github.com/johnkors/ReducedHttpClientFactoryLogging/actions)
- [![NuGet](https://img.shields.io/nuget/v/ReducedHttpClientFactoryLogging.svg)](https://www.nuget.org/packages/ReducedHttpClientFactoryLogging/)
-[![NuGet](https://img.shields.io/nuget/dt/ReducedHttpClientFactoryLogging.svg)](https://www.nuget.org/packages/ReducedHttpClientFactoryLogging/)
+[![Build](https://github.com/johnkors/MinimalHttpLogger/workflows/CI/badge.svg)](https://github.com/johnkors/MinimalHttpLogger/actions)
+ [![NuGet](https://img.shields.io/nuget/v/MinimalHttpLogger.svg)](https://www.nuget.org/packages/MinimalHttpLogger/)
+[![NuGet](https://img.shields.io/nuget/dt/MinimalHttpLogger.svg)](https://www.nuget.org/packages/MinimalHttpLogger/)
 
 
 ## What is this?
