@@ -11,7 +11,7 @@
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageTags>HttpClient Extensions Logging Minimal</PackageTags>
     <PackageProjectUrl>https://github.com/johnkors/MinimalHttpLogging</PackageProjectUrl>
-    <License>https://github.com/johnkors/MinimalHttpLogging/blob/main/LICENSE</License>
+    <LicenseUrl>https://github.com/johnkors/MinimalHttpLogging/blob/main/LICENSE</LicenseUrl>
     <RepositoryUrl>https://github.com/johnkors/MinimalHttpLogging</RepositoryUrl>    
   </PropertyGroup>
 
