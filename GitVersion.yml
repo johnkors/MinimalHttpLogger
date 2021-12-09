@@ -4,7 +4,7 @@ branches:
     mode: ContinuousDeployment
     tag: ""
   feature:
-    regex: ^features?[/-]|(?!^master$|^(hotfix|bugfix)(es)?[/-]|^support[/-]|(^(pull|pull\-requests|pr)[/-]))(^.*$)
+    regex: ^features?[/-]|(?!^main$|^(hotfix|bugfix)(es)?[/-]|^support[/-]|(^(pull|pull\-requests|pr)[/-]))(^.*$)
     mode: ContinuousDeployment
     tag: "feature"
   pull-request:
