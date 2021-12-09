@@ -61,7 +61,7 @@ internal class RequestEndOnlyLogger : DelegatingHandler
         var requestUri = request.RequestUri.ToString(); //SendAsync modifies req uri in case of redirects (?!), so making a local copy
         var stopwatch = ValueStopwatch.StartNew();
         var response = await base.SendAsync(request, cancellationToken).ConfigureAwait(false);
-        _logger.LogInformation(new EventId(101, "RequestEnd"), "{Method} {Uri} - {StatusCode} {StatusCodeLiteral} in {Time}ms", request.Method, requestUri, $"{(int)response.StatusCode}", $"{response.StatusCode}", stopwatch.GetElapsedTime().TotalMilliseconds);
+        _logger.LogInformation("{Method} {Uri} - {StatusCode} {StatusCodeLiteral} in {Time}ms", request.Method, requestUri, $"{(int)response.StatusCode}", $"{response.StatusCode}", stopwatch.GetElapsedTime().TotalMilliseconds);
 
         return response;
     }
