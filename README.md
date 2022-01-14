@@ -12,7 +12,7 @@ My logs were
 
 ## What is this?
 
-It's not possible to configure the log pattern of the built-in HttpClient loggers. To modify, one has to replace them. This package replaces the default loggers with a logger that:
+It's not possible to configure the log pattern of the Microsoft.Extensions.Http based HttpClient loggers. To modify, one has to replace them. This package replaces the default loggers with a logger that:
 
 1. Reduces the number of log statements on httpclient requests from 4 to 1 
 2. Logs 1 aggregated log statement: `{Method} {Uri} - {StatusCode} {StatusCodeLiteral} in {Time}ms`
