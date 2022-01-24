@@ -37,7 +37,7 @@ info: GET https://www.google.com/ - 200 OK in 186.4883ms
 ## Install
 
 ```sh
-$ dotnet add package
+$ dotnet add package MinimalHttpLogger
 ```
 
 ## Usage
