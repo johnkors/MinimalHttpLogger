@@ -11,8 +11,8 @@
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageTags>HttpClient Extensions Logging Minimal</PackageTags>
     <PackageProjectUrl>https://github.com/johnkors/MinimalHttpLogging</PackageProjectUrl>
-    <LicenseUrl>https://github.com/johnkors/MinimalHttpLogging/blob/main/LICENSE</LicenseUrl>
-    <RepositoryUrl>https://github.com/johnkors/MinimalHttpLogging</RepositoryUrl>    
+    <License>LICENSE</License>
+    <RepositoryUrl>https://github.com/johnkors/MinimalHttpLogging</RepositoryUrl>
   </PropertyGroup>
 
   <PropertyGroup>
@@ -29,6 +29,7 @@
   <ItemGroup>
     <None Include="../../images/icon.512x512.png" Pack="true" PackagePath="" />
     <None Include="../../README.md" Pack="true" PackagePath="" />
+    <None Include="../../LICENSE" Pack="true" PackagePath="" />
   </ItemGroup>
 
 </Project>
