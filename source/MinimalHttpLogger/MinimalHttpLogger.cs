@@ -58,7 +58,7 @@ internal class RequestEndOnlyLogger : DelegatingHandler
         {
             throw new ArgumentNullException(nameof(request));
         }
-        var requestUri = request.RequestUri.ToString(); //SendAsync modifies req uri in case of redirects (?!), so making a local copy
+        var requestUri = request.RequestUri?.ToString(); //SendAsync modifies req uri in case of redirects (?!), so making a local copy
         var stopwatch = ValueStopwatch.StartNew();
         try
         {
