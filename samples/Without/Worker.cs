@@ -20,9 +20,13 @@ public class Worker : BackgroundService
             {
                 await _client.GetAsync("https://httpstat.us/404?sleep=3000", stoppingToken);
             }
-            catch (TaskCanceledException e)
+            catch (TaskCanceledException)
             {
                 _logger.LogInformation("Timeout!");
+            }
+            catch(Exception e)
+            {
+                _logger.LogError(e.Message);
             }
 
             await Task.Delay(10000, stoppingToken);

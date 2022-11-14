@@ -58,12 +58,19 @@ internal class RequestEndOnlyLogger : DelegatingHandler
         {
             throw new ArgumentNullException(nameof(request));
         }
-        var requestUri = request.RequestUri.ToString(); //SendAsync modifies req uri in case of redirects (?!), so making a local copy
+        var requestUri = request.RequestUri?.ToString(); //SendAsync modifies req uri in case of redirects (?!), so making a local copy
         var stopwatch = ValueStopwatch.StartNew();
-        var response = await base.SendAsync(request, cancellationToken).ConfigureAwait(false);
-        _logger.LogInformation("{Method} {Uri} - {StatusCode} {StatusCodeLiteral} in {Time}ms", request.Method, requestUri, $"{(int)response.StatusCode}", $"{response.StatusCode}", stopwatch.GetElapsedTime().TotalMilliseconds);
-
-        return response;
+        try
+        {
+            var response = await base.SendAsync(request, cancellationToken).ConfigureAwait(false);
+            _logger.LogInformation("{Method} {Uri} - {StatusCode} {StatusCodeLiteral} in {Time}ms", request.Method, requestUri, $"{(int)response.StatusCode}", $"{response.StatusCode}", stopwatch.GetElapsedTime().TotalMilliseconds);
+            return response;
+        }
+        catch(Exception)
+        {
+            _logger.LogInformation("{Method} {Uri} failed to respond in {Time}ms", request.Method, requestUri, stopwatch.GetElapsedTime().TotalMilliseconds);
+            throw;
+        }
     }
 
     internal struct ValueStopwatch
