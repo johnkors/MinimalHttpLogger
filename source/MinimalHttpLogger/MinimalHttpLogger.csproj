@@ -12,6 +12,7 @@
     <PackageTags>HttpClient Extensions Logging Minimal</PackageTags>
     <PackageProjectUrl>https://github.com/johnkors/MinimalHttpLogging</PackageProjectUrl>
     <License>LICENSE</License>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <RepositoryUrl>https://github.com/johnkors/MinimalHttpLogging</RepositoryUrl>
   </PropertyGroup>
 
