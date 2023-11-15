@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFrameworks>net7.0;net8.0</TargetFrameworks>
     <ImplicitUsings>enable</ImplicitUsings>
     <LangVersion>latest</LangVersion>
     <Nullable>enable</Nullable>
@@ -17,14 +17,22 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <DotNet6Version>6.0.0</DotNet6Version>
+    <DotNet7Version>7.0.0</DotNet7Version>
+    <DotNet8Version>8.0.0</DotNet8Version>
   </PropertyGroup>
 
-  <ItemGroup Condition="'$(TargetFramework)' == 'net6.0'">
-    <PackageReference Include="Microsoft.Extensions.Http" Version="$(DotNet6Version)" />
-    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="$(DotNet6Version)" />
-    <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="$(DotNet6Version)" />
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="$(DotNet6Version)" />
+  <ItemGroup Condition="'$(TargetFramework)' == 'net7.0'">
+    <PackageReference Include="Microsoft.Extensions.Http" Version="$(DotNet7Version)" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="$(DotNet7Version)" />
+    <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="$(DotNet7Version)" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="$(DotNet7Version)" />
+  </ItemGroup>
+  
+  <ItemGroup Condition="'$(TargetFramework)' == 'net8.0'">
+    <PackageReference Include="Microsoft.Extensions.Http" Version="$(DotNet8Version)" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="$(DotNet8Version)" />
+    <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="$(DotNet8Version)" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="$(DotNet8Version)" />
   </ItemGroup>
 
   <ItemGroup>
