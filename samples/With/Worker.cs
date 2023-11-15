@@ -18,7 +18,7 @@ public class Worker : BackgroundService
         {
             try
             {
-                await _client.GetAsync("https://httpstat.us/200?sleep=3000", stoppingToken);
+                await _client.GetAsync("https://google.com/?with-minimal-logging=true", stoppingToken);
             }
             catch (TaskCanceledException)
             {
