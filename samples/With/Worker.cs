@@ -24,7 +24,7 @@ public class Worker : BackgroundService
             {
                 _logger.LogInformation("Timeout!");
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 _logger.LogError(e.Message);
             }

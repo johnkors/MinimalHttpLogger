@@ -1,6 +1,6 @@
 using With;
 
-IHost host = Host.CreateDefaultBuilder(args)
+var host = Host.CreateDefaultBuilder(args)
     .ConfigureLogging((c, b) =>
     {
         b.AddSimpleConsole(o => { o.SingleLine = true; });
@@ -18,6 +18,3 @@ IHost host = Host.CreateDefaultBuilder(args)
     .Build();
 
 await host.RunAsync();
-
-
-
