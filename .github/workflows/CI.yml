@@ -7,14 +7,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
-      - name: Setup .NET
-        uses: actions/setup-dotnet@v3
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: 8.0.x
-      - name: Restore dependencies
-        run: dotnet restore source
-      - name: Build
-        run: dotnet build --no-restore source
-      - name: Test
-        run: dotnet test source /p:CollectCoverage=true /p:CoverletOutputFormat=opencover --logger "GitHubActions;report-warnings=false"
+          dotnet-version: 9.0.x
+      - run: dotnet restore source
+      - run: dotnet build --no-restore source
+      - run: dotnet test source /p:CollectCoverage=true /p:CoverletOutputFormat=opencover --logger "GitHubActions;report-warnings=false"

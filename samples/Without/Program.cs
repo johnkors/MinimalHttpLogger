@@ -1,7 +1,9 @@
 using Without;
 
-IHost host = Host.CreateDefaultBuilder(args)
-    .ConfigureLogging((c, b) =>
+AppContext.SetSwitch("System.Net.Http.DisableUriRedaction", true);
+
+var host = Host.CreateDefaultBuilder(args)
+    .ConfigureLogging((_, b) =>
     {
         b.AddSimpleConsole(o => { o.SingleLine = true; });
     })
@@ -12,11 +14,9 @@ IHost host = Host.CreateDefaultBuilder(args)
             hostOptions.BackgroundServiceExceptionBehavior = BackgroundServiceExceptionBehavior.Ignore;
         });
         services.AddHttpClient();
+
         services.AddHostedService<Worker>();
     })
     .Build();
 
 await host.RunAsync();
-
-
-

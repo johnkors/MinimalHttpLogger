@@ -8,12 +8,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0
       - run: echo "ACTIONS_ALLOW_UNSECURE_COMMANDS=true" >> $GITHUB_ENV
-      - name: Install GitVersion
-        uses: gittools/actions/gitversion/setup@v0
+      - uses: gittools/actions/gitversion/setup@v0
         with:
           versionSpec: "5.x"
       - name: Determine Version
@@ -22,9 +21,9 @@ jobs:
         with:
           useConfigFile: true
       - name: Setup .NET
-        uses: actions/setup-dotnet@v3
+        uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: 8.0.x
+          dotnet-version: 9.0.x
       - name: Pack
         run: dotnet pack source /p:Version=${{ steps.gitversion.outputs.majorMinorPatch }} /p:InformationalVersion=${{ steps.gitversion.outputs.informationalVersion }} /p:PackageReleaseNotes="https://github.com/$GITHUB_REPOSITORY/releases/tag/${{ steps.gitversion.outputs.majorMinorPatch }}" -o ./releases
       - name: Publish
